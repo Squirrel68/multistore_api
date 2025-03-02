@@ -1,20 +1,22 @@
 openapi: 3.0.0
 info:
-  description: 'this is API for Orion Store Ecommerce. There are public, authentificated and authorized APIs. <ul> <ol> For Auth APIs  go to [https://orion-api-five.vercel.app/api/public/tokens?template=user_token](https://orion-api-five.vercel.app/api/public/tokens?template=user_token) </ol> <ol> To get authorized token go to  [https://orion-api-five.vercel.app/api/public/tokens?template=admin_token](https://orion-api-five.vercel.app/api/public/tokens?template=admin_token) </ol>'
+  description: "this is API for Orion Store Ecommerce. There are public, authentificated and authorized APIs. <ul> <ol> For Auth APIs  go to [https://orion-api-five.vercel.app/api/public/tokens?template=user_token](https://orion-api-five.vercel.app/api/public/tokens?template=user_token) </ol> <ol> To get authorized token go to  [https://orion-api-five.vercel.app/api/public/tokens?template=admin_token](https://orion-api-five.vercel.app/api/public/tokens?template=admin_token) </ol>"
   version: 1.0.0
   title: API for Orion Store Multi Vendor SASS.
   contact:
     name: Sylvain Codes
-    url: 'https://www.patreon.com/sylvaincodes'
+    url: "https://www.patreon.com/sylvaincodes"
     email: sylvaincodeur@gmail.com
   license:
     name: Apache 2.0
-    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-  termsOfService: 'https://www.patreon.com/sylvaincodes'
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  termsOfService: "https://www.patreon.com/sylvaincodes"
 servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
-    url: 'https://orion-api-five.vercel.app/api'
+    url: "https://multistore-40ivc8930-squirrel68s-projects.vercel.app/api/"
+  - description: Localhost server
+    url: "http://localhost:3000/api/"
 tags:
   - name: products
     description: Public API to retreive Products data
@@ -114,12 +116,12 @@ paths:
               - priceHighToLow
               - priceLowToHigh
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/brands:
     get:
       tags:
@@ -127,12 +129,12 @@ paths:
       summary: Find all brands published by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/reviews:
     get:
       tags:
@@ -147,12 +149,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/shippings:
     get:
       tags:
@@ -160,12 +162,12 @@ paths:
       summary: Find all brands published by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/slides:
     get:
       tags:
@@ -186,12 +188,12 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/tags:
     get:
       tags:
@@ -199,12 +201,12 @@ paths:
       summary: Find all tags published by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/categories:
     get:
       tags:
@@ -212,12 +214,12 @@ paths:
       summary: Find all categories published by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/pages:
     get:
       tags:
@@ -225,12 +227,12 @@ paths:
       summary: Find all pages published by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/sendemail:
     post:
       tags:
@@ -257,12 +259,12 @@ paths:
                   description: message
                   type: string
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/pmethods:
     get:
       tags:
@@ -270,12 +272,12 @@ paths:
       summary: Find all payments methods published by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /public/campaigns:
     get:
       tags:
@@ -283,12 +285,12 @@ paths:
       summary: Find all campaigns approved by admin
       description: You can access this content without auth.
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
   /user/addresses:
     get:
       tags:
@@ -304,43 +306,43 @@ paths:
       description: This api is protected by clerk auth.
       security:
         - bearerAuth:
-            - 'read:addresses'
+            - "read:addresses"
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
-        '401':
+                $ref: "#/components/schemas/Response"
+        "401":
           description: Not authenticated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
+                $ref: "#/components/schemas/AuthResponse"
     post:
       tags:
         - addresses
       summary: Create a new addresses
       description: This api is protected by clerk auth.
       requestBody:
-        $ref: '#/components/requestBodies/Address'
+        $ref: "#/components/requestBodies/Address"
       security:
         - bearerAuth:
-            - 'write:addresses'
+            - "write:addresses"
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostResponse'
-        '401':
+                $ref: "#/components/schemas/PostResponse"
+        "401":
           description: Not authenticated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
+                $ref: "#/components/schemas/AuthResponse"
     delete:
       tags:
         - addresses
@@ -355,20 +357,20 @@ paths:
             type: string
       security:
         - bearerAuth:
-            - 'write:addresses'
+            - "write:addresses"
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DeleteResponse'
-        '401':
+                $ref: "#/components/schemas/DeleteResponse"
+        "401":
           description: Not authenticated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthResponse'
+                $ref: "#/components/schemas/AuthResponse"
   /user/brands:
     get:
       tags:
@@ -384,14 +386,14 @@ paths:
             type: string
       security:
         - bearerAuth:
-            - 'read:brands'
+            - "read:brands"
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Response'
+                $ref: "#/components/schemas/Response"
 components:
   schemas:
     Product:
@@ -1174,7 +1176,7 @@ components:
       description: Image for a store
     Order:
       type: object
-      description: 'Order model '
+      description: "Order model "
       required:
         - pmethod
         - customer
@@ -1456,7 +1458,7 @@ components:
           type: string
         logo:
           type: string
-          default: 'https://cdn-icons-png.flaticon.com/128/126/126122.png'
+          default: "https://cdn-icons-png.flaticon.com/128/126/126122.png"
         status:
           type: string
           enum:
@@ -1480,7 +1482,7 @@ components:
               url:
                 type: string
                 description: _id of the order items
-      title: ''
+      title: ""
     Subcat:
       type: object
       required:
@@ -1605,6 +1607,6 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Address'
+            $ref: "#/components/schemas/Address"
       description: Address object that needs to be added to the form
       required: true
